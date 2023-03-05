@@ -18,8 +18,8 @@ starParameters.branches = 3;
 starParameters.spin = 50;
 starParameters.randomness = 5;
 starParameters.randomnessPower = 10;
-starParameters.insideColor = "#20376B";
-starParameters.outsideColor = "#C4C8CB";
+starParameters.insideColor = "#8C5D7A";
+starParameters.outsideColor = "#808CC2";
 
 let material = null;
 let geometry = null;
