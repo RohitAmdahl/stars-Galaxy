@@ -101,10 +101,6 @@ const Galaxy = () => {
 Galaxy();
 
 /**
- * Test cube
- */
-
-/**
  * Sizes
  */
 const sizes = {
@@ -141,7 +137,9 @@ camera.position.y = 1;
 camera.position.z = 0;
 scene.add(camera);
 
-// Controls
+/**
+ * Control
+ */
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
 
@@ -161,8 +159,6 @@ const clock = new THREE.Clock();
 
 const tick = () => {
   const elapsedTime = clock.getElapsedTime();
-
-  // Update controls
   controls.update();
 
   camera.position.x = Math.cos(elapsedTime * 0.04);
