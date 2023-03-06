@@ -13,12 +13,12 @@ const scene = new THREE.Scene();
 const starParameters = {};
 starParameters.count = 1000;
 starParameters.size = 0.01;
-starParameters.radius = 1.15;
-starParameters.branches = 3;
-starParameters.spin = 50;
+starParameters.radius = 6.5;
+starParameters.branches = 5;
+starParameters.spin = 10;
 starParameters.randomness = 5;
-starParameters.randomnessPower = 10;
-starParameters.insideColor = "#8C5D7A";
+starParameters.randomnessPower = 5;
+starParameters.insideColor = "#F2B8B8";
 starParameters.outsideColor = "#808CC2";
 
 let material = null;
@@ -88,15 +88,14 @@ const Galaxy = () => {
 
   points = new THREE.Points(geometry, material);
   scene.add(points);
-  const SunGeometry = new THREE.SphereGeometry(0.1, 32, 16);
+  const SunGeometry = new THREE.SphereGeometry(0.2, 2, 5);
   const SunMaterial = new THREE.MeshBasicMaterial({
     color: "#fcb500",
+    wireframe: true,
   });
 
   const sphere = new THREE.Mesh(SunGeometry, SunMaterial);
   scene.add(sphere);
-
-  //-----------
 };
 Galaxy();
 
@@ -127,7 +126,7 @@ window.addEventListener("resize", () => {
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(
-  75,
+  45,
   sizes.width / sizes.height,
   0.3,
   100
@@ -162,6 +161,7 @@ const tick = () => {
   controls.update();
 
   camera.position.x = Math.cos(elapsedTime * 0.04);
+
   camera.position.z = Math.sin(elapsedTime * 0.05);
   camera.lookAt(0, 0, 0);
 
